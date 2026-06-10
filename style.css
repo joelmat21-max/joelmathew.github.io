@@ -594,7 +594,176 @@ nav {
   margin-bottom: 1rem;
 }
 
-/* ── BLOG POST MODAL ─────────────────────────────────────── */
+/* ── HERO PHOTO ──────────────────────────────────────────── */
+.hero-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4rem;
+  margin-bottom: 0;
+}
+.hero-text { flex: 1; }
+.hero-photo-wrap {
+  flex-shrink: 0;
+  opacity: 0;
+  animation: fadeUp 0.6s var(--ease) 0.4s forwards;
+  text-align: center;
+}
+.hero-photo {
+  width: 220px;
+  height: 220px;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: 2px;
+  border: 1px solid var(--border-lg);
+  filter: grayscale(15%);
+  transition: filter 0.3s var(--ease);
+  display: block;
+}
+.hero-photo:hover { filter: grayscale(0%); }
+.hero-photo-label {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  color: var(--faint);
+  letter-spacing: 0.1em;
+  margin-top: 0.6rem;
+}
+@media (max-width: 768px) {
+  .hero-inner { flex-direction: column-reverse; gap: 2rem; }
+  .hero-photo { width: 140px; height: 140px; }
+}
+
+/* ── TRAVEL PAGE ─────────────────────────────────────────── */
+.travel-page {
+  background: #fafaf8;
+  color: #1a1a1a;
+}
+.travel-page .section-eyebrow { color: #b07d3a !important; }
+.travel-title { color: #1a1a1a !important; }
+.travel-sub { color: #666 !important; }
+.travel-page .container { max-width: var(--max-w); margin: 0 auto; padding: 0 2.5rem; }
+
+.travel-counter {
+  display: flex;
+  gap: 3rem;
+  border-top: 1px solid #e0ddd8;
+  border-bottom: 1px solid #e0ddd8;
+  padding: 2rem 0;
+  margin-bottom: 4rem;
+}
+.travel-count-item { display: flex; flex-direction: column; gap: 0.3rem; }
+.travel-count-num {
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #1a1a1a;
+  line-height: 1;
+  letter-spacing: -0.03em;
+}
+.travel-count-label {
+  font-size: 0.72rem;
+  color: #999;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+.travel-region { margin-bottom: 3.5rem; }
+.travel-region-label {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: #b07d3a;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+}
+.travel-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1rem;
+}
+.travel-card {
+  background: #fff;
+  border: 1px solid #e8e4de;
+  border-radius: 2px;
+  overflow: hidden;
+  transition: border-color 0.2s, transform 0.2s;
+}
+.travel-card:hover {
+  border-color: #b07d3a;
+  transform: translateY(-2px);
+}
+.travel-card-img {
+  height: 140px;
+  background: #f0ece6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3.5rem;
+  border-bottom: 1px solid #e8e4de;
+}
+.travel-card-body { padding: 1.25rem; }
+.travel-card-country {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.01em;
+}
+.travel-card-note {
+  font-size: 0.82rem;
+  color: #777;
+  line-height: 1.7;
+  margin-bottom: 0.75rem;
+}
+.travel-tag {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  color: #b07d3a;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  background: #fdf5ea;
+  padding: 0.2rem 0.5rem;
+  border-radius: 2px;
+}
+
+.travel-next-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+.travel-next-item {
+  background: #fff;
+  border: 1px dashed #d0ccc6;
+  padding: 0.6rem 1.1rem;
+  border-radius: 2px;
+  font-size: 0.85rem;
+  color: #999;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+}
+
+.travel-photo-note {
+  margin-top: 3rem;
+  padding: 1.5rem;
+  background: #fff;
+  border: 1px dashed #d0ccc6;
+  border-radius: 2px;
+  font-size: 0.85rem;
+  color: #999;
+  text-align: center;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.05em;
+}
+
+@media (max-width: 768px) {
+  .travel-counter { gap: 1.5rem; flex-wrap: wrap; }
+  .travel-grid { grid-template-columns: 1fr; }
+}
+
+
 .blog-post-modal {
   margin-top: 3rem;
   border: 1px solid var(--border);
